@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loods Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gate">
+  <div class="card">
+    <h1>🌿 Loods Tracker</h1>
+    <p class="sub">Log in om de loods te bekijken.</p>
+    <form id="login" autocomplete="off">
+      <input id="lName" placeholder="Jouw naam" maxlength="40" required>
+      <input id="lPass" type="password" placeholder="Wachtwoord" required>
+      <button type="submit">Inloggen</button>
+    </form>
+    <div class="msg neg" id="lErr"></div>
+  </div>
+</div>
+
+<main id="app" style="display:none">
+<h1>🌿 Loods Tracker</h1>
+<p class="sub"><span id="dot" class="live"></span><span id="status">Verbinden…</span> · Ingelogd als <b id="me"></b> · <a class="lnk" id="adminLink">Beheerder</a> · <a class="lnk" id="logout">Uitloggen</a></p>
+
+<div class="grid">
+  <div class="card"><div class="big" id="tBags">0</div><div class="lbl">Wietzakjes in de loods</div></div>
+  <div class="card"><div class="big" id="tPlants">0</div><div class="lbl">Wietplanten in de loods</div></div>
+</div>
+
+<div class="card sec">
+  <h2>Registreer planten of genomen zakjes</h2>
+  <form id="f" autocomplete="off">
+    <select id="kind"><option value="plants">🌱 Planten erin gedaan</option><option value="bags">🛍️ Zakjes genomen</option></select>
+    <input id="amt" type="number" min="1" step="1" placeholder="Aantal" required>
+    <button class="full" type="submit">Registreren</button>
+  </form>
+  <div class="msg" id="err"></div>
+</div>
+
+<div class="card sec">
+  <h2>Per lid</h2>
+  <div class="msg" style="margin-top:-6px">"Te nemen" = planten × 26/75 (afgerond naar beneden), min de zakjes die al genomen zijn.</div>
+  <div class="wrap"><table>
+    <thead><tr><th>Lid</th><th class="n">Planten</th><th class="n">Te nemen</th><th class="n">Genomen</th></tr></thead>
+    <tbody id="members"></tbody>
+  </table></div>
+</div>
+
+<div class="card sec">
+  <h2>Laatste activiteit</h2>
+  <div class="wrap"><table><tbody id="log"></tbody></table></div>
+</div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
