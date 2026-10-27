@@ -1,0 +1,8 @@
+{
+  "name": "loods-tracker",
+  "version": "1.0.0",
+  "description": "Live tracker voor de wietloods",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=16" }
+}
